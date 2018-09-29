@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Trolleybus.Properties
+namespace Lab_2.Properties
 {
 
 

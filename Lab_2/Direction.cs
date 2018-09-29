@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trolleybus
+namespace Lab_2
 {
-    public enum Direction
+   public enum Direction
     {
-        Up,
+        Up, 
         Down,
         Left,
         Right
-
     }
 }
