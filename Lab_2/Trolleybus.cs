@@ -55,7 +55,7 @@ namespace Lab_2
             }
             if (Accumulator)
             {
-                g.FillRectangle(brush, _startPosX - 10, _startPosY + 10, 10, 25);
+                g.FillRectangle(brush, _startPosX - 5, _startPosY + 10, 5, 25);
             }
         }
     }
