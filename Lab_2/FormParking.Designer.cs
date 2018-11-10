@@ -35,11 +35,10 @@
             this.buttonPlace = new System.Windows.Forms.Button();
             this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
-            this.buttonCreateBus = new System.Windows.Forms.Button();
-            this.buttonCreateTroll = new System.Windows.Forms.Button();
             this.listBoxLevel = new System.Windows.Forms.ListBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.labelLavel = new System.Windows.Forms.Label();
+            this.buttonAddTransport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxParking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlace)).BeginInit();
@@ -81,7 +80,7 @@
             // 
             this.buttonPlace.Location = new System.Drawing.Point(18, 126);
             this.buttonPlace.Name = "buttonPlace";
-            this.buttonPlace.Size = new System.Drawing.Size(75, 29);
+            this.buttonPlace.Size = new System.Drawing.Size(83, 29);
             this.buttonPlace.TabIndex = 2;
             this.buttonPlace.Text = "Забрать";
             this.buttonPlace.UseVisualStyleBackColor = true;
@@ -103,28 +102,6 @@
             this.labelPlace.Size = new System.Drawing.Size(53, 17);
             this.labelPlace.TabIndex = 0;
             this.labelPlace.Text = "Место:";
-            // 
-            // buttonCreateBus
-            // 
-            this.buttonCreateBus.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonCreateBus.Location = new System.Drawing.Point(1169, 257);
-            this.buttonCreateBus.Name = "buttonCreateBus";
-            this.buttonCreateBus.Size = new System.Drawing.Size(207, 23);
-            this.buttonCreateBus.TabIndex = 2;
-            this.buttonCreateBus.Text = "Припарковать автобус";
-            this.buttonCreateBus.UseVisualStyleBackColor = true;
-            this.buttonCreateBus.Click += new System.EventHandler(this.buttonCreateBus_Click);
-            // 
-            // buttonCreateTroll
-            // 
-            this.buttonCreateTroll.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonCreateTroll.Location = new System.Drawing.Point(1169, 295);
-            this.buttonCreateTroll.Name = "buttonCreateTroll";
-            this.buttonCreateTroll.Size = new System.Drawing.Size(207, 23);
-            this.buttonCreateTroll.TabIndex = 7;
-            this.buttonCreateTroll.Text = "Припарковать троллейбус";
-            this.buttonCreateTroll.UseVisualStyleBackColor = true;
-            this.buttonCreateTroll.Click += new System.EventHandler(this.buttonCreateTroll_Click);
             // 
             // listBoxLevel
             // 
@@ -153,15 +130,24 @@
             this.labelLavel.TabIndex = 9;
             this.labelLavel.Text = "Уровни";
             // 
+            // buttonAddTransport
+            // 
+            this.buttonAddTransport.Location = new System.Drawing.Point(1180, 272);
+            this.buttonAddTransport.Name = "buttonAddTransport";
+            this.buttonAddTransport.Size = new System.Drawing.Size(184, 34);
+            this.buttonAddTransport.TabIndex = 10;
+            this.buttonAddTransport.Text = "Добавить транспорт";
+            this.buttonAddTransport.UseVisualStyleBackColor = true;
+            this.buttonAddTransport.Click += new System.EventHandler(this.buttonSetBus_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1395, 785);
+            this.Controls.Add(this.buttonAddTransport);
             this.Controls.Add(this.labelLavel);
             this.Controls.Add(this.listBoxLevel);
-            this.Controls.Add(this.buttonCreateTroll);
-            this.Controls.Add(this.buttonCreateBus);
             this.Controls.Add(this.groupBoxParking);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
@@ -179,14 +165,13 @@
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.GroupBox groupBoxParking;
-        private System.Windows.Forms.Button buttonCreateBus;
         private System.Windows.Forms.Button buttonPlace;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Label labelPlace;
-        private System.Windows.Forms.Button buttonCreateTroll;
         private System.Windows.Forms.PictureBox pictureBoxPlace;
         private System.Windows.Forms.ListBox listBoxLevel;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label labelLavel;
+        private System.Windows.Forms.Button buttonAddTransport;
     }
 }
