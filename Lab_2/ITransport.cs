@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_2
 {
-   public interface ITransport
+    public interface ITransport
     {
 
         /// <summary>
@@ -28,7 +28,11 @@ namespace Lab_2
         /// </summary>
         /// <param name="g"></param>
         void DrawBus(Graphics g);
-        
+        /// <summary>
+        /// Смена основного цвета автомобиля
+        /// </summary>
+        /// <param name="color"></param>
+        void SetMainColor(Color color);
 
     }
 }

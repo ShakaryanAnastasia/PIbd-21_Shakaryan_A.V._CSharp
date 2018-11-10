@@ -58,6 +58,13 @@ namespace Lab_2
                 g.FillRectangle(brush, _startPosX - 5, _startPosY + 10, 5, 25);
             }
         }
+        /// Смена дополнительного цвета
+        /// </summary>
+        /// <param name="color"></param>
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
     }
 }
 

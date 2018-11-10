@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace Lab_2
 {
+    public delegate void busDelegate(ITransport bus);
     static class Program
     {
         /// <summary>
