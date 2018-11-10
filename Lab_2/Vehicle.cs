@@ -49,6 +49,6 @@ namespace Lab_2
         }
         public abstract void DrawBus(Graphics g);
         public abstract void MoveTransport(Direction direction);
-      
+
     }
 }

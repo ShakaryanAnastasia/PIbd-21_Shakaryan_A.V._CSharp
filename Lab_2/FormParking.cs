@@ -52,7 +52,7 @@ namespace Lab_2
                 pictureBoxParking.Image = bmp;
             }
         }
-     
+
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
         /// </summary>

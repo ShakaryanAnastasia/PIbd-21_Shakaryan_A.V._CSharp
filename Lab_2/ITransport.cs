@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_2
 {
-   public interface ITransport
+    public interface ITransport
     {
 
         /// <summary>

@@ -31,9 +31,6 @@ namespace Lab_2
             panelLightCoral.MouseDown += panelColor_MouseDown;
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
-
-
-
         /// <summary>
         /// Отрисовать автобус
         /// </summary>
@@ -70,13 +67,11 @@ namespace Lab_2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void labelBus_MouseDown(object sender, MouseEventArgs e)
         {
             labelBus.DoDragDrop(labelBus.Text, DragDropEffects.Move |
 DragDropEffects.Copy);
         }
-       
         /// <summary>
         /// Передаем информацию при нажатии на Label
         /// </summary>
@@ -87,7 +82,6 @@ DragDropEffects.Copy);
             labelTroll.DoDragDrop(labelTroll.Text, DragDropEffects.Move |
            DragDropEffects.Copy);
         }
-
         /// <summary>
         /// Проверка получаемой информации (ее типа на соответствие требуемому)
         /// </summary>
@@ -95,17 +89,15 @@ DragDropEffects.Copy);
         /// <param name="e"></param>
         private void panelTransport_DragEnter(object sender, DragEventArgs e)
         {
+            if (e.Data.GetDataPresent(DataFormats.Text))
             {
-                if (e.Data.GetDataPresent(DataFormats.Text))
-                {
-                    e.Effect = DragDropEffects.Copy;
-                }
-                else
-                {
-                    e.Effect = DragDropEffects.None;
-                }
+                e.Effect = DragDropEffects.Copy;
             }
+            else
+            {
+                e.Effect = DragDropEffects.None;
             }
+        }
         /// <summary>
         /// Действия при приеме перетаскиваемой информации
         /// </summary>
