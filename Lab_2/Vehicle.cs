@@ -9,7 +9,6 @@ namespace Lab_2
 {
     public abstract class Vehicle : ITransport
     {
-
         /// <summary>
         /// Левая координата отрисовки автомобиля
         /// </summary>
@@ -49,6 +48,5 @@ namespace Lab_2
         }
         public abstract void DrawBus(Graphics g);
         public abstract void MoveTransport(Direction direction);
-
     }
 }
