@@ -30,20 +30,20 @@
         {
             this.pictureBoxTransport = new System.Windows.Forms.PictureBox();
             this.groupBoxTransport = new System.Windows.Forms.GroupBox();
-            this.labelBus = new System.Windows.Forms.Label();
             this.labelTroll = new System.Windows.Forms.Label();
+            this.labelBus = new System.Windows.Forms.Label();
             this.panelTransport = new System.Windows.Forms.Panel();
             this.groupBoxColor = new System.Windows.Forms.GroupBox();
+            this.panelLightCoral = new System.Windows.Forms.Panel();
+            this.panelLightBlue = new System.Windows.Forms.Panel();
+            this.panelDarkViolet = new System.Windows.Forms.Panel();
+            this.panelMediumVioletRed = new System.Windows.Forms.Panel();
+            this.panelActiveBorder = new System.Windows.Forms.Panel();
+            this.panelAquamarine = new System.Windows.Forms.Panel();
+            this.panelTurquoise = new System.Windows.Forms.Panel();
+            this.panelBlueViolet = new System.Windows.Forms.Panel();
             this.labelBaseColor = new System.Windows.Forms.Label();
             this.labelDopColor = new System.Windows.Forms.Label();
-            this.panelBlueViolet = new System.Windows.Forms.Panel();
-            this.panelTurquoise = new System.Windows.Forms.Panel();
-            this.panelAquamarine = new System.Windows.Forms.Panel();
-            this.panelActiveBorder = new System.Windows.Forms.Panel();
-            this.panelMediumVioletRed = new System.Windows.Forms.Panel();
-            this.panelDarkViolet = new System.Windows.Forms.Panel();
-            this.panelLightBlue = new System.Windows.Forms.Panel();
-            this.panelLightCoral = new System.Windows.Forms.Panel();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransport)).BeginInit();
@@ -72,18 +72,6 @@
             this.groupBoxTransport.TabStop = false;
             this.groupBoxTransport.Text = "Тип транспорта";
             // 
-            // labelBus
-            // 
-            this.labelBus.AllowDrop = true;
-            this.labelBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelBus.Location = new System.Drawing.Point(30, 70);
-            this.labelBus.Name = "labelBus";
-            this.labelBus.Size = new System.Drawing.Size(194, 55);
-            this.labelBus.TabIndex = 0;
-            this.labelBus.Text = "Автобус";
-            this.labelBus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelBus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelBus_MouseDown);
-            // 
             // labelTroll
             // 
             this.labelTroll.AllowDrop = true;
@@ -95,6 +83,18 @@
             this.labelTroll.Text = "Троллейбус";
             this.labelTroll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelTroll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelTrolleybus_MouseDown);
+            // 
+            // labelBus
+            // 
+            this.labelBus.AllowDrop = true;
+            this.labelBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelBus.Location = new System.Drawing.Point(30, 70);
+            this.labelBus.Name = "labelBus";
+            this.labelBus.Size = new System.Drawing.Size(194, 55);
+            this.labelBus.TabIndex = 0;
+            this.labelBus.Text = "Автобус";
+            this.labelBus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelBus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelBus_MouseDown);
             // 
             // panelTransport
             // 
@@ -125,6 +125,78 @@
             this.groupBoxColor.TabStop = false;
             this.groupBoxColor.Text = "Цвета";
             // 
+            // panelLightCoral
+            // 
+            this.panelLightCoral.BackColor = System.Drawing.Color.Gold;
+            this.panelLightCoral.Location = new System.Drawing.Point(127, 202);
+            this.panelLightCoral.Name = "panelLightCoral";
+            this.panelLightCoral.Size = new System.Drawing.Size(52, 49);
+            this.panelLightCoral.TabIndex = 7;
+            this.panelLightCoral.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
+            // panelLightBlue
+            // 
+            this.panelLightBlue.BackColor = System.Drawing.Color.Yellow;
+            this.panelLightBlue.Location = new System.Drawing.Point(127, 147);
+            this.panelLightBlue.Name = "panelLightBlue";
+            this.panelLightBlue.Size = new System.Drawing.Size(52, 49);
+            this.panelLightBlue.TabIndex = 7;
+            this.panelLightBlue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
+            // panelDarkViolet
+            // 
+            this.panelDarkViolet.BackColor = System.Drawing.Color.Purple;
+            this.panelDarkViolet.Location = new System.Drawing.Point(127, 92);
+            this.panelDarkViolet.Name = "panelDarkViolet";
+            this.panelDarkViolet.Size = new System.Drawing.Size(52, 49);
+            this.panelDarkViolet.TabIndex = 7;
+            this.panelDarkViolet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
+            // panelMediumVioletRed
+            // 
+            this.panelMediumVioletRed.BackColor = System.Drawing.Color.White;
+            this.panelMediumVioletRed.Location = new System.Drawing.Point(127, 37);
+            this.panelMediumVioletRed.Name = "panelMediumVioletRed";
+            this.panelMediumVioletRed.Size = new System.Drawing.Size(52, 49);
+            this.panelMediumVioletRed.TabIndex = 7;
+            this.panelMediumVioletRed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
+            // panelActiveBorder
+            // 
+            this.panelActiveBorder.BackColor = System.Drawing.Color.Silver;
+            this.panelActiveBorder.Location = new System.Drawing.Point(32, 202);
+            this.panelActiveBorder.Name = "panelActiveBorder";
+            this.panelActiveBorder.Size = new System.Drawing.Size(52, 49);
+            this.panelActiveBorder.TabIndex = 7;
+            this.panelActiveBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
+            // panelAquamarine
+            // 
+            this.panelAquamarine.BackColor = System.Drawing.Color.Red;
+            this.panelAquamarine.Location = new System.Drawing.Point(32, 147);
+            this.panelAquamarine.Name = "panelAquamarine";
+            this.panelAquamarine.Size = new System.Drawing.Size(52, 49);
+            this.panelAquamarine.TabIndex = 7;
+            this.panelAquamarine.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
+            // panelTurquoise
+            // 
+            this.panelTurquoise.BackColor = System.Drawing.Color.Green;
+            this.panelTurquoise.Location = new System.Drawing.Point(32, 92);
+            this.panelTurquoise.Name = "panelTurquoise";
+            this.panelTurquoise.Size = new System.Drawing.Size(52, 49);
+            this.panelTurquoise.TabIndex = 7;
+            this.panelTurquoise.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
+            // panelBlueViolet
+            // 
+            this.panelBlueViolet.BackColor = System.Drawing.Color.Black;
+            this.panelBlueViolet.Location = new System.Drawing.Point(32, 37);
+            this.panelBlueViolet.Name = "panelBlueViolet";
+            this.panelBlueViolet.Size = new System.Drawing.Size(52, 49);
+            this.panelBlueViolet.TabIndex = 6;
+            this.panelBlueViolet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            // 
             // labelBaseColor
             // 
             this.labelBaseColor.AllowDrop = true;
@@ -150,78 +222,6 @@
             this.labelDopColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelDopColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelDopColor_DragDrop);
             this.labelDopColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragEnter);
-            // 
-            // panelBlueViolet
-            // 
-            this.panelBlueViolet.BackColor = System.Drawing.Color.BlueViolet;
-            this.panelBlueViolet.Location = new System.Drawing.Point(32, 37);
-            this.panelBlueViolet.Name = "panelBlueViolet";
-            this.panelBlueViolet.Size = new System.Drawing.Size(52, 49);
-            this.panelBlueViolet.TabIndex = 6;
-            this.panelBlueViolet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
-            // 
-            // panelTurquoise
-            // 
-            this.panelTurquoise.BackColor = System.Drawing.Color.Turquoise;
-            this.panelTurquoise.Location = new System.Drawing.Point(32, 92);
-            this.panelTurquoise.Name = "panelTurquoise";
-            this.panelTurquoise.Size = new System.Drawing.Size(52, 49);
-            this.panelTurquoise.TabIndex = 7;
-            this.panelTurquoise.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
-            // 
-            // panelAquamarine
-            // 
-            this.panelAquamarine.BackColor = System.Drawing.Color.Aquamarine;
-            this.panelAquamarine.Location = new System.Drawing.Point(32, 147);
-            this.panelAquamarine.Name = "panelAquamarine";
-            this.panelAquamarine.Size = new System.Drawing.Size(52, 49);
-            this.panelAquamarine.TabIndex = 7;
-            this.panelAquamarine.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
-            // 
-            // panelActiveBorder
-            // 
-            this.panelActiveBorder.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelActiveBorder.Location = new System.Drawing.Point(32, 202);
-            this.panelActiveBorder.Name = "panelActiveBorder";
-            this.panelActiveBorder.Size = new System.Drawing.Size(52, 49);
-            this.panelActiveBorder.TabIndex = 7;
-            this.panelActiveBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
-            // 
-            // panelMediumVioletRed
-            // 
-            this.panelMediumVioletRed.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.panelMediumVioletRed.Location = new System.Drawing.Point(127, 37);
-            this.panelMediumVioletRed.Name = "panelMediumVioletRed";
-            this.panelMediumVioletRed.Size = new System.Drawing.Size(52, 49);
-            this.panelMediumVioletRed.TabIndex = 7;
-            this.panelMediumVioletRed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
-            // 
-            // panelDarkViolet
-            // 
-            this.panelDarkViolet.BackColor = System.Drawing.Color.DarkViolet;
-            this.panelDarkViolet.Location = new System.Drawing.Point(127, 92);
-            this.panelDarkViolet.Name = "panelDarkViolet";
-            this.panelDarkViolet.Size = new System.Drawing.Size(52, 49);
-            this.panelDarkViolet.TabIndex = 7;
-            this.panelDarkViolet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
-            // 
-            // panelLightBlue
-            // 
-            this.panelLightBlue.BackColor = System.Drawing.Color.LightBlue;
-            this.panelLightBlue.Location = new System.Drawing.Point(127, 147);
-            this.panelLightBlue.Name = "panelLightBlue";
-            this.panelLightBlue.Size = new System.Drawing.Size(52, 49);
-            this.panelLightBlue.TabIndex = 7;
-            this.panelLightBlue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
-            // 
-            // panelLightCoral
-            // 
-            this.panelLightCoral.BackColor = System.Drawing.Color.LightCoral;
-            this.panelLightCoral.Location = new System.Drawing.Point(127, 202);
-            this.panelLightCoral.Name = "panelLightCoral";
-            this.panelLightCoral.Size = new System.Drawing.Size(52, 49);
-            this.panelLightCoral.TabIndex = 7;
-            this.panelLightCoral.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
             // buttonAdd
             // 

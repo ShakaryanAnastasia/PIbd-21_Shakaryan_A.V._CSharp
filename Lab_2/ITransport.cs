@@ -9,7 +9,6 @@ namespace Lab_2
 {
     public interface ITransport
     {
-
         /// <summary>
         /// Установка позиции автомобиля
         /// </summary>
@@ -32,7 +31,6 @@ namespace Lab_2
         /// Смена основного цвета автомобиля
         /// </summary>
         /// <param name="color"></param>
-        void SetMainColor(Color color);
-
+        void SetMainColor(Color color);
     }
 }

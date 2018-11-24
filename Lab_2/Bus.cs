@@ -29,6 +29,20 @@ namespace Lab_2
             Weight = weight;
             MainColor = mainColor;
         }
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="info">Информация по объекту</param>
+        public Bus(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
+        }
         public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
@@ -64,10 +78,9 @@ namespace Lab_2
                     break;
             }
         }
-       
         public override void DrawBus(Graphics g)
         {
-            
+
             Pen pen = new Pen(Color.Black);
             Brush brushYellow = new SolidBrush(MainColor);
             Brush brushBlack = new SolidBrush(Color.Black);
@@ -79,6 +92,9 @@ namespace Lab_2
             g.FillRectangle(brushGray, _startPosX + 70, _startPosY, 30, 30);
             g.FillRectangle(brushBlack, _startPosX + 40, _startPosY + 10, 20, 30);
         }
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
+        }
     }
-        
 }

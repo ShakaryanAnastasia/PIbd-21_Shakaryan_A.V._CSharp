@@ -60,8 +60,6 @@ namespace Lab_2
                 eventAddTransport += ev;
             }
         }
-
-
         /// <summary>
         /// Передаем информацию при нажатии на Label
         /// </summary>
@@ -116,7 +114,6 @@ DragDropEffects.Copy);
             }
             DrawBus();
         }
-
         /// <summary>
         /// Отправляем цвет с панели
         /// </summary>
