@@ -35,6 +35,8 @@ namespace Lab_2
         public MultiLevelParking(int countStages, int pictureWidth, int pictureHeight)
         {
             parkingStages = new List<Parking<ITransport>>();
+            this.pictureWidth = pictureWidth;
+            this.pictureHeight = pictureHeight;
             for (int i = 0; i < countStages; ++i)
             {
                 parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth,
@@ -62,7 +64,7 @@ namespace Lab_2
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
         /// <returns></returns>
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -81,27 +83,26 @@ namespace Lab_2
                         WriteToFile("Level" + Environment.NewLine, fs);
                         for (int i = 0; i < countPlaces; i++)
                         {
-                            var bus = level[i];
-                            if (bus != null)
-                            {
-                                //если место не пустое
-                                //Записываем тип мшаины
-                                if (bus.GetType().Name == "Bus")
-                                {
-                                    WriteToFile(i + ":Bus:", fs);
+                            try {
+                                var bus = level[i];
+                                //Записываем тип автобуса
+                                    if (bus.GetType().Name == "Bus")
+                                    {
+                                        WriteToFile(i + ":Bus:", fs);
+                                    }
+                                    if (bus.GetType().Name == "Trolleybus")
+                                    {
+                                        WriteToFile(i + ":Trolleybus:", fs);
+                                    }
+                                    //Записываемые параметры
+                                    WriteToFile(bus + Environment.NewLine, fs);
                                 }
-                                if (bus.GetType().Name == "Trolleybus")
-                                {
-                                    WriteToFile(i + ":Trolleybus:", fs);
-                                }
-                                //Записываемые параметры
-                                WriteToFile(bus + Environment.NewLine, fs);
-                            }
+                            catch (Exception ex) { }
+                            finally { }                        
                         }
                     }
                 }
             }
-            return true;
         }
         /// <summary>
         /// Метод записи информации в файл
@@ -118,11 +119,11 @@ namespace Lab_2
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))
@@ -152,7 +153,7 @@ namespace Lab_2
             else
             {
                 //если нет такой записи, то это не те данные
-                return false;
+                throw new Exception("Неверный формат файла");
             }
             int counter = -1;
             ITransport bus = null;
@@ -181,7 +182,6 @@ namespace Lab_2
                 }
                 parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = bus;
             }
-            return true;
         }
     }
 }
