@@ -58,7 +58,7 @@ namespace Lab_2
         {
             if (p._places.Count == p._maxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -88,7 +88,7 @@ namespace Lab_2
                 p._places.Remove(index);
                 return bus;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }
         /// <summary>
         /// Метод проверки заполнености парковочного места (ячейки массива)
@@ -145,7 +145,7 @@ namespace Lab_2
                 {
                     return _places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -155,6 +155,10 @@ namespace Lab_2
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 *
                     _placeSizeHeight + 40, PictureWidth, PictureHeight);
                 }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
+                }
             }
         }
     }
