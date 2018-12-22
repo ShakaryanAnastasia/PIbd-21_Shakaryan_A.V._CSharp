@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_2
 {
-    public class Trolleybus : Bus
+    public class Trolleybus : Bus, IComparable<Trolleybus>, IEquatable<Trolleybus>
     {
         /// <summary>
         /// Дополнительный цвет
@@ -78,6 +78,92 @@ namespace Lab_2
             return base.ToString() + ";" + DopColor.Name + ";" + Accumulator + ";" +
            Horns;
         }
+        /// <summary>
+        /// Метод интерфейса IComparable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo(Trolleybus other)
+        {
+            var res = (this is Bus).CompareTo(other is Bus);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (Accumulator != other.Accumulator)
+            {
+                return Accumulator.CompareTo(other.Accumulator);
+            }
+            if (Horns != other.Horns)
+            {
+                return Horns.CompareTo(other.Horns);
+            }
+
+            return 0;
+        }
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Trolleybus other)
+        {
+            var res = (this as Bus).Equals(other as Bus);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (Accumulator != other.Accumulator)
+            {
+                return false;
+            }
+            if (Horns != other.Horns)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            Trolleybus carObj = obj as Trolleybus;
+            if (carObj == null)
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
-}
+}
 

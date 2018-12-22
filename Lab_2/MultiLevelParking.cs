@@ -81,24 +81,19 @@ namespace Lab_2
                     {
                         //Начинаем уровень
                         WriteToFile("Level" + Environment.NewLine, fs);
-                        for (int i = 0; i < countPlaces; i++)
+                        foreach (ITransport car in level)
                         {
-                            try {
-                                var bus = level[i];
-                                //Записываем тип автобуса
-                                    if (bus.GetType().Name == "Bus")
-                                    {
-                                        WriteToFile(i + ":Bus:", fs);
-                                    }
-                                    if (bus.GetType().Name == "Trolleybus")
-                                    {
-                                        WriteToFile(i + ":Trolleybus:", fs);
-                                    }
-                                    //Записываемые параметры
-                                    WriteToFile(bus + Environment.NewLine, fs);
-                                }
-                            catch (Exception ex) { }
-                            finally { }                        
+                            //Записываем тип мшаины
+                            if (car.GetType().Name == "Bus")
+                            {
+                                WriteToFile(level.GetKey + ":Bus:", fs);
+                            }
+                            if (car.GetType().Name == "Trolleybus")
+                            {
+                                WriteToFile(level.GetKey + ":Trolleybus:", fs);
+                            }
+                            //Записываемые параметры
+                            WriteToFile(car + Environment.NewLine, fs);
                         }
                     }
                 }
@@ -115,7 +110,7 @@ namespace Lab_2
             stream.Write(info, 0, info.Length);
         }
         /// <summary>
-        /// Загрузка нформации по автомобилям на парковках из файла
+        /// Загрузка информации по автомобилям на парковках из файла
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
@@ -128,15 +123,14 @@ namespace Lab_2
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))
             {
-                using (BufferedStream bs = new BufferedStream(fs))
+
+                byte[] b = new byte[fs.Length];
+                UTF8Encoding temp = new UTF8Encoding(true);
+                while (fs.Read(b, 0, b.Length) > 0)
                 {
-                    byte[] b = new byte[fs.Length];
-                    UTF8Encoding temp = new UTF8Encoding(true);
-                    while (bs.Read(b, 0, b.Length) > 0)
-                    {
-                        bufferTextFromFile += temp.GetString(b);
-                    }
+                    bufferTextFromFile += temp.GetString(b);
                 }
+
             }
             bufferTextFromFile = bufferTextFromFile.Replace("\r", "");
             var strs = bufferTextFromFile.Split('\n');
@@ -156,6 +150,7 @@ namespace Lab_2
                 throw new Exception("Неверный формат файла");
             }
             int counter = -1;
+            int counterBus = 0;
             ITransport bus = null;
             for (int i = 1; i < strs.Length; ++i)
             {
@@ -180,8 +175,15 @@ namespace Lab_2
                 {
                     bus = new Trolleybus(strs[i].Split(':')[2]);
                 }
-                parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = bus;
+                parkingStages[counter][counterBus++] = bus;
             }
         }
+        /// <summary>
+        /// Сортировка уровней
+        /// </summary>
+        public void Sort()
+        {
+            parkingStages.Sort();
+        }
     }
 }
